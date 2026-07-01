@@ -1,0 +1,123 @@
+{
+  "basics": {
+    "name": "Sachin Bisht",
+    "label": "Software Developer",
+    "phone": "+91 7042215276",
+    "email": "ksachinbisht@gmail.com",
+    "github": "https://github.com/sachinbisht1",
+    "linkedin": "https://www.linkedin.com/in/sachin-bisht-b35a82176/",
+    "location": "Delhi, India",
+    "summary": "Software Developer with expertise in Computer Vision, 3D Reconstruction, and Backend Systems, building scalable pipelines for drone mapping, point cloud processing, and mesh generation using Python and GPU acceleration."
+  },
+  "work": [
+    {
+      "company": "EY",
+      "position": "Senior Software Developer",
+      "location": "New Delhi, India",
+      "startDate": "06/2025",
+      "endDate": "Present",
+      "highlights": [
+        "Working on a Project to develop robust software for maintaining and processing data of A Pharmaceutical Organization."
+      ]
+    },
+    {
+      "company": "Botlabs Dynamics",
+      "position": "Software Developer",
+      "location": "New Delhi, India",
+      "startDate": "12/2023",
+      "endDate": "06/2025",
+      "highlights": [
+        "Worked on various Computer Vision related tasks such as Image stitching for seamless Panorama and Orthophotos, including tech stack such as OpenCV, computer Vision, python.",
+        "Working on a Backend Project to make an interface for Drone mapping Project."
+      ]
+    },
+    {
+      "company": "AlphaStream.ai",
+      "position": "Software Developer",
+      "location": "Bangalore, India",
+      "startDate": "09/2022",
+      "endDate": "09/2023",
+      "highlights": [
+        "Trained a Table detection Model with an accuracy of 97.8 Percent.",
+        "Performed Research and Development in a Project related to Layout Understanding of a Document Helping in NLP and Database Projects."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Lovely Professional University",
+      "area": "Computer Science Engineering",
+      "studyType": "B.Tech.",
+      "location": "Phagwara, Punjab",
+      "startDate": "2019",
+      "endDate": "2023"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Layout Data preparation and model training",
+      "company": "AlphaStream.ai",
+      "location": "Bangalore, India",
+      "startDate": "04/2023",
+      "endDate": "06/2023",
+      "highlights": [
+        "Created a layout model dataset which was to differentiate the different components of the data and then further predict the objects to their classes. Also trained the dataset on different models and compared their accuracy to the current model in use."
+      ]
+    },
+    {
+      "name": "Table Extraction and Classification",
+      "company": "AlphaStream.ai",
+      "location": "Bangalore, India",
+      "startDate": "10/2022",
+      "endDate": "09/2023",
+      "highlights": [
+        "Developed an automated multi-model table extraction pipeline, comparing outputs from three deep learning models to rank accuracy and reliability.",
+        "Implemented OCR-based extraction and post-processing pipelines for structured data ingestion into databases."
+      ]
+    },
+    {
+      "name": "Image mapping, stitching and 3D Model generation",
+      "company": "Botlabs Dynamics",
+      "location": "Delhi, India",
+      "startDate": "12/2023",
+      "endDate": "Present",
+      "highlights": [
+        "Implemented dense point cloud generation from aerial imagery and converted it into high-quality 3D meshes using Poisson and TSDF reconstruction."
+      ]
+    },
+    {
+      "name": "Drone Survey Website Backend",
+      "company": "Botlabs Dynamics",
+      "location": "Delhi, India",
+      "startDate": "04/2024",
+      "endDate": "Present",
+      "highlights": [
+        "Worked on Python Programming for the backend of the website that will deal with the drone survey mapping."
+      ]
+    },
+    {
+      "name": "Time Capsule",
+      "company": "Personal Project",
+      "location": "Delhi, India",
+      "startDate": "01/2026",
+      "endDate": "Present",
+      "highlights": [
+        "Working on a project that saves image to an exact location that can later be explored by other memory hunters."
+      ]
+    }
+  ],
+  "skills": {
+    "Programming": ["Python", "C++ (Object-Oriented)", "SQL"],
+    "Libraries & Frameworks": ["OpenCV", "Pandas", "NumPy", "FastAPI", "Open3D", "Open Drone Map", "COLMAP"],
+    "Database & Cloud": ["DynamoDB", "AWS", "Postgres", "NoSQL"],
+    "ML & Vision": ["Computer Vision", "OCR", "Data Analysis", "3D Reconstruction", "Photogrammetry", "Orthomosaic", "Orthophoto"],
+    "Automation": ["Automated Dataset Generation"],
+    "Backend & System": ["API Development", "Data Manipulation", "Microservices Architecture", "Asynchronous Programming"]
+  },
+  "certifications": [
+    {
+      "name": "Fundamentals of Computer Vision",
+      "issuer": "IIT Guwahati"
+    }
+  ]
+}
