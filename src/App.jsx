@@ -16,6 +16,28 @@ function App() {
     window.scrollTo(0, 0);
   }, [viewMode]);
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('print') !== '1') return;
+
+    const timer = window.setTimeout(() => {
+      window.print();
+    }, 350);
+
+    const handleAfterPrint = () => {
+      window.close();
+    };
+
+    window.addEventListener('afterprint', handleAfterPrint);
+
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener('afterprint', handleAfterPrint);
+    };
+  }, [viewMode]);
+
   return (
     <div className="app-container">
       {viewMode === 'portfolio' ? (

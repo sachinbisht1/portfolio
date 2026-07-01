@@ -3,9 +3,17 @@ import resumeData from '../data/resumeData.json';
 
 const PrintableResume = ({ setViewMode }) => {
   const { basics, work, education, projects, skills, certifications } = resumeData;
+  const portfolioUrl = 'https://portfolio-blond-mu-82.vercel.app/';
 
   const handlePrint = () => {
-    window.print();
+    const printUrl = new URL(window.location.href);
+    printUrl.searchParams.set('view', 'resume');
+    printUrl.searchParams.set('print', '1');
+
+    const popup = window.open(printUrl.toString(), '_blank', 'noopener,noreferrer,width=900,height=1200');
+    if (!popup) {
+      window.location.href = printUrl.toString();
+    }
   };
 
   return (
@@ -16,7 +24,7 @@ const PrintableResume = ({ setViewMode }) => {
           <button onClick={() => setViewMode('portfolio')} className="btn btn-secondary" style={{padding: '0.4rem 1.2rem', fontSize: '0.85rem', color: '#fff', border: '1px solid rgba(255,255,255,0.2)'}}>
             ← Back to Portfolio
           </button>
-          <p className="control-bar-text">Print-ready A4 View. Use standard print setup to download as PDF.</p>
+          <p className="control-bar-text">Print-ready A4 view. Use the browser print dialog to save as PDF.</p>
           <button onClick={handlePrint} className="btn btn-primary btn-print" style={{padding: '0.4rem 1.2rem', fontSize: '0.85rem'}}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px'}}><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Save as PDF
@@ -36,6 +44,12 @@ const PrintableResume = ({ setViewMode }) => {
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style={{ marginRight: '4px', verticalAlign: 'middle' }}><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.57a1 1 0 0 0-1.01.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.2a1 1 0 0 0 .24-1.01 11.48 11.48 0 0 1-.57-3.53A1 1 0 0 0 7.36 4H4a1 1 0 0 0-1 1c0 9.39 7.61 17 17 17a1 1 0 0 0 1-1v-3.62a1 1 0 0 0-1-1z"/></svg>
                 {basics.phone}
               </span>
+            )}
+            {portfolioUrl && (
+              <a href={portfolioUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', color: 'inherit' }}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '4px', verticalAlign: 'middle' }}><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                Portfolio
+              </a>
             )}
             {basics.linkedin && (
               <a href={basics.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style={{ display: 'inline-flex', alignItems: 'center', color: 'inherit' }}>
