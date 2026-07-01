@@ -6,14 +6,7 @@ const PrintableResume = ({ setViewMode }) => {
   const portfolioUrl = 'https://portfolio-blond-mu-82.vercel.app/';
 
   const handlePrint = () => {
-    const printUrl = new URL(window.location.href);
-    printUrl.searchParams.set('view', 'resume');
-    printUrl.searchParams.set('print', '1');
-
-    const popup = window.open(printUrl.toString(), '_blank', 'noopener,noreferrer,width=900,height=1200');
-    if (!popup) {
-      window.location.href = printUrl.toString();
-    }
+    window.print();
   };
 
   return (
