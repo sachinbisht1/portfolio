@@ -7,7 +7,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const dataPath = path.join(__dirname, '..', 'src', 'data', 'resumeData.json');
-const outputPath = path.join(process.env.HOME || process.env.USERPROFILE || '.', 'Downloads', 'Sachin_Bisht_Resume.pdf');
+const publicOutputPath = path.join(__dirname, '..', 'public', 'Sachin_Bisht_Resume.pdf');
+const downloadsOutputPath = path.join(process.env.HOME || process.env.USERPROFILE || '.', 'Downloads', 'Sachin_Bisht_Resume.pdf');
 
 const resumeData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 const { basics, work, education, projects, skills, certifications } = resumeData;
@@ -100,5 +101,9 @@ if (certifications?.length) {
   });
 }
 
-fs.writeFileSync(outputPath, Buffer.from(pdf.output('arraybuffer')));
-console.log(`Resume PDF created at ${outputPath}`);
+fs.mkdirSync(path.dirname(publicOutputPath), { recursive: true });
+fs.writeFileSync(publicOutputPath, Buffer.from(pdf.output('arraybuffer')));
+fs.mkdirSync(path.dirname(downloadsOutputPath), { recursive: true });
+fs.writeFileSync(downloadsOutputPath, Buffer.from(pdf.output('arraybuffer')));
+console.log(`Resume PDF created at ${publicOutputPath}`);
+console.log(`Resume PDF copied to ${downloadsOutputPath}`);

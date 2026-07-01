@@ -5,10 +5,6 @@ const PrintableResume = ({ setViewMode }) => {
   const { basics, work, education, projects, skills, certifications } = resumeData;
   const portfolioUrl = 'https://portfolio-blond-mu-82.vercel.app/';
 
-  const handlePrint = () => {
-    window.print();
-  };
-
   return (
     <div className="resume-page-wrapper">
       {/* Control bar, only visible on screen, hidden in print PDF */}
@@ -18,10 +14,10 @@ const PrintableResume = ({ setViewMode }) => {
             ← Back to Portfolio
           </button>
           <p className="control-bar-text">Print-ready A4 view. Use the browser print dialog to save as PDF.</p>
-          <button onClick={handlePrint} className="btn btn-primary btn-print" style={{padding: '0.4rem 1.2rem', fontSize: '0.85rem'}}>
+          <a href="/Sachin_Bisht_Resume.pdf" download="Sachin_Bisht_Resume.pdf" className="btn btn-primary btn-print" style={{padding: '0.4rem 1.2rem', fontSize: '0.85rem', textDecoration: 'none'}}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px'}}><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Save as PDF
-          </button>
+            Download PDF
+          </a>
         </div>
       </div>
 
